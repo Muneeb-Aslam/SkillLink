@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Design",
+    "icon": "/landing/design.svg",
+    "projectAvailable": 200
+  },
+  {
+    "name": "Sales",
+    "icon": "/landing/sales.svg",
+    "projectAvailable": 250
+  },
+  {
+    "name": "Marketing",
+    "icon": "/landing/team.svg",
+    "projectAvailable": 200
+  },
+  {
+    "name": "Video Editing",
+    "icon": "/landing/video.svg",
+    "projectAvailable": 200
+  },
+  {
+    "name": "Front End",
+    "icon": "/landing/frontend.svg",
+    "projectAvailable": 200
+  },
+  {
+    "name": "Back End",
+    "icon": "/landing/backend.svg",
+    "projectAvailable": 200
+  },
+  {
+    "name": "Full Stack",
+    "icon": "/landing/fullstack.svg",
+    "projectAvailable": 10
+  },
+  {
+    "name": "Team Resources",
+    "icon": "/landing/team.svg",
+    "projectAvailable": 200
+  }
+]

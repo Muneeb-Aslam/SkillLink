@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Hellen Jummy",
+    "position": "Software Engineer",
+    "image": "/landing/user.png",
+    "review": "Lacus vestibulum ultricies mi risus, duis non, volutpat nullam non. Magna congue nisi maecenas elit aliquet eu sed consectetur. Vitae quis cras vitae praesent morbi adipiscing purus consectetur mi."
+  },
+  {
+    "name": "Ralph Edwards",
+    "position": "MERN Stack Developer",
+    "image": "/landing/user2.png",
+    "review": "Lacus vestibulum ultricies mi risus, duis non, volutpat nullam non. Magna congue nisi maecenas elit aliquet eu sed consectetur. Vitae quis cras vitae praesent morbi adipiscing purus consectetur mi."
+  },
+  {
+    "name": "Hellena John",
+    "position": "Next JS Developer",
+    "image": "/landing/user2.png",
+    "review": "Lacus vestibulum ultricies mi risus, duis non, volutpat nullam non. Magna congue nisi maecenas elit aliquet eu sed consectetur. Vitae quis cras vitae praesent morbi adipiscing purus consectetur mi."
+  }
+]

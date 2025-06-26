@@ -1,0 +1,69 @@
+[
+  {
+    "name": "Email Application",
+    "budget": "$500",
+    "city": "ISB",
+    "country": "Pakistan",
+    "icon": "/landing/project1.png",
+    "description": "Revolut is looking for Email Marketing to help team jkadsjfkjsdfjlasdjfsldfjan"
+  },
+
+  {
+    "name": "MERN Landing page",
+    "budget": "$500 - $100",
+    "city": "Berlin",
+    "country": "Germany",
+    "icon": "/landing/Dropbox.svg",
+    "description": "Revolut is looking for Email Marketing to help team jkadsjfkjsdfjlasdjfsldfjan"
+  },
+
+  {
+    "name": "Taxi App UI",
+    "budget": "$500",
+    "city": "London",
+    "country": "UK",
+    "icon": "/landing/pitch.png",
+    "description": "Revolut is looking for Email Marketing to help team jkadsjfkjsdfjlasdjfsldfjan"
+  },
+
+  {
+    "name": "Visual Designer",
+    "budget": "$500",
+    "city": "New York",
+    "country": "USA",
+    "icon": "/landing/project4.png",
+    "description": "Revolut is looking for Email Marketing to help team jkadsjfkjsdfjlasdjfsldfjan"
+  },
+  {
+    "name": "Product Designer",
+    "budget": "$500",
+    "city": "ISB",
+    "country": "Pakistan",
+    "icon": "/landing/twitter.png",
+    "description": "Revolut is looking for Email Marketing to help team jkadsjfkjsdfjlasdjfsldfjan"
+  },
+  {
+    "name": "Lead Designer",
+    "budget": "$500",
+    "city": "FSD",
+    "country": "Pakistan",
+    "icon": "/landing/godaddy.png",
+    "description": "Revolut is looking for Email Marketing to help team jkadsjfkjsdfjlasdjfsldfjan"
+  },
+  {
+    "name": "Data Analyst",
+    "budget": "$500",
+    "city": "KHI",
+    "country": "Pakistan",
+    "icon": "/landing/project1.png",
+    "description": "Revolut is looking for Email Marketing to help team jkadsjfkjsdfjlasdjfsldfjan"
+  },
+  {
+    "name": "Django Developer",
+    "budget": "$500",
+    "city": "Lahore",
+    "country": "Pakistan",
+    "icon": "/landing/pitch.png",
+    "description": "Revolut is looking for Email Marketing to help team jkadsjfkjsdfjlasdjfsldfjan"
+  }
+]
