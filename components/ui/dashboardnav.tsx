@@ -43,7 +43,7 @@ export default function DashboardNavbar() {
 
   return (
     <nav className=" bg-primary-background flex h-20 justify-center items-center select-none w-full relative">
-      <div className="relative w-full max-w-[1300px] h-full flex justify-between items-center px-16 ">
+      <div className="relative w-full h-full flex justify-between items-center px-16 ">
         <div className="flex justify-start items-center gap-32">
           <Link className="flex justify-between items-center gap-2" href={"/"}>
             <Image

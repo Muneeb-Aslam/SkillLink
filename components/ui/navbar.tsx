@@ -39,7 +39,7 @@ export default function Navbar() {
 
   return (
     <nav className=" bg-primary-background flex h-20 justify-center items-center select-none w-full relative">
-      <div className="w-full max-w-[1300px] h-full flex justify-between items-center px-16">
+      <div className="w-full h-full flex justify-between items-center px-16">
         <Link className="flex justify-between items-center gap-2" href={"/"}>
           <Image
             src={logo}

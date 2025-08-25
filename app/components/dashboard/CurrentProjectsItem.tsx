@@ -1,5 +1,7 @@
 import { ThreeDotIcon } from "../icons";
 
+import type { JSX } from "react";
+
 interface CurrentProjectsItemProps {
     name: string;
     price: number;

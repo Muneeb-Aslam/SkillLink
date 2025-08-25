@@ -24,24 +24,6 @@ export default function Hero() {
             Great platform for the job seeker that are searching for freelancing
             opportunities.
           </span>
-          <div className="w-full flex ">
-            <input
-              type="text"
-              className="px-4 w-[60%] text-grayish"
-              placeholder="Job Title"
-            />
-            <button className="bg-blue px-4 py-2 flex justify-center items-center">
-              <Image
-                src={search}
-                alt="search"
-                className="w-[24px] h-[24px]"
-              ></Image>
-            </button>
-          </div>
-          <div className="flex justify-start items-center gap-2 text-grayish font-bold text-md">
-            <span>Popular</span>
-            <span>UI Designer, UX Researcher, Android Web</span>
-          </div>
         </div>
         <Image
           src={hero}

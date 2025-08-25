@@ -8,24 +8,24 @@ import webicon from "@/public/website.png";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import toast from "react-hot-toast";
-import { API_FREELANCER_PROFILE_PATH } from "@/app/api/api_constants";
+import { API_CLIENT_PROFILE_PATH } from "@/app/api/api_constants";
 
 const SocialLinks: React.FC<{ data: any }> = (data) => {
   const clientData = data.data;
   const [formData, setFormData] = useState({
     website: clientData?.socialMedia?.website,
     twitter: clientData?.socialMedia?.twitter,
-    github: clientData?.socialMedia?.github,
+    insta: clientData?.socialMedia?.insta,
   });
 
   const [edit, setEdit] = useState<boolean>(false);
-
+  
   const handleEdit = () => {
     setEdit((pre) => !pre);
     setFormData({
       website: clientData?.socialMedia?.website,
       twitter: clientData?.socialMedia?.twitter,
-      github: clientData?.socialMedia?.github,
+      insta: clientData?.socialMedia?.insta,
     });
   };
 
@@ -34,16 +34,14 @@ const SocialLinks: React.FC<{ data: any }> = (data) => {
   };
 
   const updateSection = async () => {
-    console.log(formData);
-
-    const response = await fetch(`${API_FREELANCER_PROFILE_PATH}`, {
+    const response = await fetch(`${API_CLIENT_PROFILE_PATH}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
         userId: clientData?.userId,
-        socialMedia: formData,
+        socialMedia:formData,
       }),
     });
 
@@ -57,10 +55,13 @@ const SocialLinks: React.FC<{ data: any }> = (data) => {
   };
 
   return (
-    <section className="p-6 w-3/5 border-[1.5px] border-primary flex flex-col justify-between gap-4">
+    <section className="p-6 w-2/5 border-[1.5px] border-primary flex flex-col justify-between gap-4">
       <div className="w-full flex justify-between items-center">
         <h3 className="text-blackish font-bold text-xl">Social Links</h3>
-        <div className=" cursor-pointer" onClick={handleEdit}>
+        <div
+          className="border-[1.5px] border-primary w-8 h-8 bg-white cursor-pointer"
+          onClick={handleEdit}
+        >
           <Image
             src={editicon}
             alt="add"
@@ -71,49 +72,58 @@ const SocialLinks: React.FC<{ data: any }> = (data) => {
       <div className="w-full flex justify-start items-start gap-4">
         <Image src={instaicon} alt="email" className=""></Image>
         <div className="w-full flex flex-col justify-start items-start gap-2">
-          <span className="text-grayish text-sm">Github</span>
-
-          <Input
-            type="text"
-            onChange={handleChange}
-            name="github"
-            value={formData.github}
-            className="w-full"
-            disabled={!edit}
-            placeholder="Github"
-          />
+          <span className="text-grayish text-sm">Instagram</span>
+          {edit ? (
+            <Input
+              type="text"
+              onChange={handleChange}
+              name="insta"
+              value={formData.insta}
+              className="w-full"
+            />
+          ) : (
+            <span className="text-blue font-bold text-md">
+              {formData.insta}
+            </span>
+          )}
         </div>
       </div>
       <div className="w-full flex justify-start items-start gap-4">
         <Image src={twittericon} alt="email" className=""></Image>
         <div className="w-full flex flex-col justify-start items-start gap-2">
           <span className="text-grayish text-sm">Twitter</span>
-
-          <Input
-            type="text"
-            onChange={handleChange}
-            name="twitter"
-            value={formData.twitter}
-            className="w-full"
-            disabled={!edit}
-            placeholder="Linkedin"
-          />
+          {edit ? (
+            <Input
+              type="text"
+              onChange={handleChange}
+              name="twitter"
+              value={formData.twitter}
+              className="w-full"
+            />
+          ) : (
+            <span className="text-blue font-bold text-md">
+              {formData.twitter}
+            </span>
+          )}
         </div>
       </div>
       <div className="w-full flex justify-start items-start gap-4">
         <Image src={webicon} alt="email" className=""></Image>
         <div className="w-full flex flex-col justify-start items-start gap-2">
           <span className="text-grayish text-sm">Website</span>
-
-          <Input
-            type="text"
-            onChange={handleChange}
-            name="website"
-            value={formData.website}
-            className="w-full"
-            disabled={!edit}
-            placeholder="Website"
-          />
+          {edit ? (
+            <Input
+              type="text"
+              onChange={handleChange}
+              name="website"
+              value={formData.website}
+              className="w-full"
+            />
+          ) : (
+            <span className="text-blue font-bold text-md">
+              {formData.website}
+            </span>
+          )}
         </div>
       </div>
       {!!edit && (

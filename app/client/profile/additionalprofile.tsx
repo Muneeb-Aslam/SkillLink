@@ -9,12 +9,12 @@ import language from "@/public/langicon.png";
 import phone from "@/public/phoneicon.png";
 import editicon from "@/public/Edit.png";
 import { Input } from "@/components/ui/input";
+import { useSession } from "next-auth/react";
 import { Button } from "@/components/ui/button";
 import cross from "@/public/cross.svg";
 import add from "@/public/addicon.svg";
-import { API_FREELANCER_PROFILE_PATH } from "@/app/api/api_constants";
+import { API_CLIENT_PROFILE_PATH } from "@/app/api/api_constants";
 import toast from "react-hot-toast";
-import Link from "next/link";
 
 const additionalSchema = z.object({
   email: z.string().optional(),
@@ -23,7 +23,7 @@ const additionalSchema = z.object({
 });
 
 const AdditionalProfile: React.FC<{ data: any }> = ({ data }) => {
-  const clientData = data.data;
+  const clientData = data;
 
   const {
     control,
@@ -58,7 +58,7 @@ const AdditionalProfile: React.FC<{ data: any }> = ({ data }) => {
   };
 
   const onSubmit = async (data: any) => {
-    const response = await fetch(`${API_FREELANCER_PROFILE_PATH}`, {
+    const response = await fetch(`${API_CLIENT_PROFILE_PATH}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -74,7 +74,7 @@ const AdditionalProfile: React.FC<{ data: any }> = ({ data }) => {
     if (response.ok) {
       toast.success("Updated About successfully.");
       setEdit(false);
-      // window.location.reload();
+      window.location.reload();
     } else {
       toast.error("Could not update about section.");
     }
@@ -82,14 +82,17 @@ const AdditionalProfile: React.FC<{ data: any }> = ({ data }) => {
 
   return (
     <form
-      className="p-8 w-3/5 border-[1.5px] border-primary flex flex-col justify-start items-start gap-4 min-h-[388px]"
+      className="p-8 w-3/5 border-[1.5px] border-primary flex flex-col justify-between gap-4"
       onSubmit={handleSubmit(onSubmit)}
     >
       <div className="w-full flex justify-between items-center">
         <h3 className="text-blackish font-bold text-xl">
           Additional Information
         </h3>
-        <div className="b cursor-pointer" onClick={handleEdit}>
+        <div
+          className="border-[1.5px] border-primary w-8 h-8 bg-white cursor-pointer"
+          onClick={handleEdit}
+        >
           <Image
             src={editicon}
             alt="add"
@@ -102,28 +105,26 @@ const AdditionalProfile: React.FC<{ data: any }> = ({ data }) => {
           <Image src={email} alt="email" className="w-[25px] h-[25px]"></Image>
           <div className="w-full flex flex-col justify-start items-start">
             <span className="text-grayish text-sm">Email</span>
-
-            <Input
-              type="text"
-              className="w-full"
-              {...register("email")}
-              disabled={!edit}
-              placeholder="Email"
-            />
+            {edit ? (
+              <Input type="text" className="w-full" {...register("email")} />
+            ) : (
+              <span className="text-blackish font-bold text-md">
+                {getValues("email")}
+              </span>
+            )}
           </div>
         </div>
         <div className="w-full flex justify-start items-start gap-2">
           <Image src={phone} alt="phone" className="w-[25px] h-[25px]"></Image>
           <div className="w-full flex flex-col justify-start items-start">
             <span className="text-grayish text-sm">Phone</span>
-
-            <Input
-              type="text"
-              {...register("phone")}
-              className="w-full"
-              disabled={!edit}
-              placeholder="Phone #"
-            />
+            {edit ? (
+              <Input type="text" {...register("phone")} className="w-full" />
+            ) : (
+              <span className="text-blackish font-bold text-md">
+                {getValues("phone")}
+              </span>
+            )}
           </div>
         </div>
         <div className="w-full flex justify-start items-start gap-2">
@@ -155,7 +156,7 @@ const AdditionalProfile: React.FC<{ data: any }> = ({ data }) => {
                       <input
                         {...register(`languages.${index}`)}
                         type="text"
-                        className="border-2 border-input text-md font-bold text-blackish outline-none rounded-md px-2 py-2 w-36 "
+                        className="focus:border-2 focus:border-input text-md font-bold text-blackish outline-none rounded-md px-2 py-2 w-36"
                       />
                       <span
                         onClick={() => remove(index)}
@@ -185,12 +186,6 @@ const AdditionalProfile: React.FC<{ data: any }> = ({ data }) => {
               )}
             </div>
           </div>
-        </div>
-        <div className="w-full flex justify-between items-center gap-4">
-          <span className="text-grayish font-bold text-lg">Bids Available</span>
-          <span className="text-normal font-bold text-md">
-            {clientData?.bids}
-          </span>
         </div>
       </div>
       {!!edit && (

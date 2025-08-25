@@ -63,7 +63,7 @@ export default function Footer() {
         <hr />
         <div className="pt-2 flex justify-between item-center">
           <div className="text-normal font-semibold">
-            2024 @ Skill Link. All rights reserved.
+            {new Date().getFullYear()} @ Skill Link. All rights reserved.
           </div>
           <div className="flex items-center gap-4">
             <Image

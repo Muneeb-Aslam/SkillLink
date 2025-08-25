@@ -14,7 +14,7 @@ const Projects: React.FC<ProjectsProps> = ({ projectList }) => {
   const totalPages = Math.ceil(projects.length / pagesPerView);
   return (
     <>
-      <div className="w-full flex flex-col justify-start items-start px-28 py-20">
+      <div className="w-full flex flex-col justify-start items-start px-28 py-20 min-h-screen">
         <div className="w-full flex flex-col gap-4">
           <div className="flex w-full justify-between items-center">
             <div className="flex flex-col gap-4">
