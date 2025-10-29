@@ -68,9 +68,12 @@ export default function DashboardNavbar() {
             >
               Current Projects
             </Link>
-            {/* <Link href="/" className="text-normal font-semibold text-md">
+            <Link
+              href={`/messages/${user?.id}`}
+              className="text-normal font-semibold text-md"
+            >
               Messages
-            </Link> */}
+            </Link>
           </div>
         </div>
         <div className="flex items-center gap-4">

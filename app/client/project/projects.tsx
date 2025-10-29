@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ProjectItem from "./projectitem";
 import Pagination from "../../components/projects/Pagination";
 
@@ -8,7 +8,16 @@ interface ProjectsProps {
 }
 
 const Projects: React.FC<ProjectsProps> = ({ projectList }) => {
-  const [projects, setProjects] = useState<any[]>(projectList);
+  console.log("projectList received:", projectList);
+
+  const [projects, setProjects] = useState<any[]>(
+    Array.isArray(projectList) ? projectList : []
+  );
+
+  useEffect(() => {
+    console.log("Updating projects state from prop:", projectList);
+    setProjects(Array.isArray(projectList) ? projectList : []);
+  }, [projectList]);
 
   const [page, setPage] = useState<number>(0);
   const pagesPerView = 6;

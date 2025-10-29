@@ -64,9 +64,12 @@ export default function Navbar() {
             >
               Current Projects
             </Link>
-            {/* <Link href="/" className="text-normal font-semibold text-md">
+            <Link
+              href={`/messages/${user?.id}`}
+              className="text-normal font-semibold text-md"
+            >
               Messages
-            </Link> */}
+            </Link>
           </div>
         )}
         {user ? (
