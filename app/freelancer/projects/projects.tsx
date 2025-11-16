@@ -18,7 +18,9 @@ const Projects: React.FC<ProjectsProps> = ({ projectList }) => {
         <div className="w-full flex flex-col gap-4">
           <div className="flex w-full justify-between items-center">
             <div className="flex flex-col gap-4">
-              <div className="text-4xl font-semibold">ALL projects</div>
+              <div className="text-4xl font-semibold text-blue">
+                All Projects
+              </div>
               <div className="text-neutral-100">
                 Showing {projects.length} results
               </div>

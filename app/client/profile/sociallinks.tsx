@@ -19,7 +19,7 @@ const SocialLinks: React.FC<{ data: any }> = (data) => {
   });
 
   const [edit, setEdit] = useState<boolean>(false);
-  
+
   const handleEdit = () => {
     setEdit((pre) => !pre);
     setFormData({
@@ -41,7 +41,7 @@ const SocialLinks: React.FC<{ data: any }> = (data) => {
       },
       body: JSON.stringify({
         userId: clientData?.userId,
-        socialMedia:formData,
+        socialMedia: formData,
       }),
     });
 
@@ -55,8 +55,8 @@ const SocialLinks: React.FC<{ data: any }> = (data) => {
   };
 
   return (
-    <section className="p-6 w-2/5 border-[1.5px] border-primary flex flex-col justify-between gap-4">
-      <div className="w-full flex justify-between items-center">
+    <section className="p-6 w-2/5 border-[1.5px] rounded-lg border-[#f8f4f4f1] flex flex-col justify-between gap-4">
+      <div className=" p-4 w-full flex justify-between items-center">
         <h3 className="text-blackish font-bold text-xl">Social Links</h3>
         <div
           className="border-[1.5px] border-primary w-8 h-8 bg-white cursor-pointer"

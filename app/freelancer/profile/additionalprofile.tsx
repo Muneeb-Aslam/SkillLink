@@ -82,7 +82,7 @@ const AdditionalProfile: React.FC<{ data: any }> = ({ data }) => {
 
   return (
     <form
-      className="p-8 w-3/5 border-[1.5px] border-primary flex flex-col justify-start items-start gap-4 min-h-[388px]"
+      className="p-8 w-3/5 bg-white shadow-lg rounded-lg border-[1.5px] border-[#f8f4f4f1] flex flex-col justify-start items-start gap-6 min-h-[388px] transition-all duration-300 "
       onSubmit={handleSubmit(onSubmit)}
     >
       <div className="w-full flex justify-between items-center">

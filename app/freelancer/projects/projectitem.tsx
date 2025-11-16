@@ -24,7 +24,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
           {moment(new Date(project.createdAt)).format("MMM DD")}
         </div>
       </div>
-      <div className="text-sm text-gray-secondary h-60 flex-grow">
+      <div className="text-sm  text-gray-secondary h-60 overflow-auto flex-grow">
         {project.description}
       </div>
       <div className="py-4 border-t border-gray-border flex items-center justify-between">

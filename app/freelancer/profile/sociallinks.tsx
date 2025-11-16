@@ -57,8 +57,8 @@ const SocialLinks: React.FC<{ data: any }> = (data) => {
   };
 
   return (
-    <section className="p-6 w-3/5 border-[1.5px] border-primary flex flex-col justify-between gap-4">
-      <div className="w-full flex justify-between items-center">
+    <section className="p-8   w-3/5 bg-white shadow-lg rounded-lg border-[1.5px] border-[#f8f4f4f1] flex flex-col justify-between gap-6 transition-all ">
+      <div className=" p-4 w-full flex justify-between items-center">
         <h3 className="text-blackish font-bold text-xl">Social Links</h3>
         <div className=" cursor-pointer" onClick={handleEdit}>
           <Image

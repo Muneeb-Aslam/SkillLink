@@ -1,6 +1,6 @@
 import Image from "next/image";
 import hero from "@/public/hero.png";
-import title from "@/public/borders.png";
+import title from "@/public/borders-1.png";
 import { Input } from "@/components/ui/input";
 import search from "@/public/landing/search.svg";
 
@@ -12,7 +12,7 @@ export default function Hero() {
           <div className="w-full flex flex-col">
             <div className="text-blackish text-[3.8rem] font-bold">
               Discover Freelancing &<br></br>
-              <span className="text-blue">Skill Link</span>
+              <span className="text-[#04b2b2]">Skill Link</span>
             </div>
             <Image
               src={title}

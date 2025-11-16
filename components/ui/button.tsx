@@ -10,12 +10,12 @@ const buttonVariants = cva(
       variant: {
         default:
           "text-white font-bold rounded-xl text-md disabled:opacity-50 bg-blue",
-        accent:"text-blue font-bold bg-inherit",
-        secondary:"text-white font-bold text-md bg-blue",
+        accent: "text-[#04b2b2] font-bold bg-inherit",
+        secondary: "text-white font-bold text-md bg-[#04b2b2]",
       },
       size: {
         default: "h-10 px-4 py-2",
-        accent:"h-10 w-min",
+        accent: "h-10 w-min",
         secondary: "h-10 px-4 w-max",
       },
     },
@@ -23,7 +23,7 @@ const buttonVariants = cva(
       variant: "default",
       size: "default",
     },
-  },
+  }
 );
 
 export interface ButtonProps
@@ -34,7 +34,6 @@ export interface ButtonProps
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
-    
     return (
       <button
         className={cn(buttonVariants({ variant, size, className }))}
@@ -42,7 +41,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       />
     );
-  },
+  }
 );
 Button.displayName = "Button";
 

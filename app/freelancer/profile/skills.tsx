@@ -68,9 +68,9 @@ const Skills: React.FC<{ data: any }> = ({ data }) => {
   };
 
   return (
-    <section className="py-8 px-16 w-full flex justify-between items-start gap-4 ">
+    <section className="py-8 px-16 w-full flex justify-between items-start gap-4  ">
       <form
-        className="p-8 h-max relative w-full border-[1.5px] border-primary flex flex-col justify-between items-start gap-4"
+        className="p-8 h-max relative w-full bg-white shadow-lg rounded-lg border-[1.5px] border-[#f8f4f4f1] flex flex-col justify-between items-start gap-4"
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="w-full flex justify-between items-center">

@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        blue: "#04ADE6",
+        blue: "#04b2b2",
         "dark-blue": "#25324B",
         "light-gray": "#7C8493",
         "lightest-gray": "#D6DDEB",
@@ -22,7 +22,7 @@ const config: Config = {
         background: "#FFF",
         "primary-background": "#F8F8FD",
         "secondary-background": "#202430",
-        "getting-start": "#4640DE",
+        "getting-start": "#04b2b2",
         gray: {
           100: "rgba(248, 248, 253, 1)",
           primary: "rgba(0,0,0,1)",
@@ -45,7 +45,7 @@ const config: Config = {
       input: "#C9C9C9",
       primary: "#A8ADB7",
       "landing-border": "#D6DDEB",
-      white:"#FFF",
+      white: "#FFF",
     },
     fontFamily: {
       Poppins: ["Poppins", "sans-serif"],

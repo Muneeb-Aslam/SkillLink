@@ -51,8 +51,8 @@ const About: React.FC<any> = (data: { data: any }) => {
     }
   };
   return (
-    <section className="w-full flex justify-between items-start gap-4 ">
-      <div className="p-8  relative w-full border-[1.5px] border-primary flex flex-col justify-start items-start gap-4 min-h-[335px]">
+    <section className="w-full p-8 bg-white shadow-lg rounded-lg border-[1.5px] border-[#f8f4f4f1] flex justify-between items-start gap-6 transition-all duration-300 ">
+      <div className="p-8  relative w-full bg-white shadow-lg rounded-lg border-[1.5px] border-[#f8f4f4f1] flex flex-col justify-start items-start gap-4 min-h-[335px]">
         <div className="w-full flex justify-between items-center">
           <h3 className="text-blackish font-bold text-xl">About Me</h3>
           <div className=" cursor-pointer" onClick={handleEdit}>

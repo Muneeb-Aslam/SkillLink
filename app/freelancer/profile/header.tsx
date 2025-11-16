@@ -85,15 +85,11 @@ export default function Header(data: any) {
     }
   };
   return (
-    <header className="w-full flex justify-center items-center">
+    <header className="w-full flex justify-center items-center   ">
       <div className="py-8 px-16 w-full flex justify-between items-start gap-4">
-        <div className="h-max relative w-full border-[1.5px] border-primary">
+        <div className="h-max relative w-full border-[1.5px] bg-white shadow-lg rounded-lg  border-[#f8f4f4f1]">
           <div>
-            <Image
-              src={coverimage}
-              alt=""
-              className="w-full h-48 bg-no-repeat bg-cover"
-            ></Image>
+            <div className="w-full h-48 bg-no-repeat bg-[#76d4d4]"></div>
             <div
               className="border-[1.5px] border-primary w-8 h-8 bg-white absolute top-4 right-4 cursor-pointer"
               onClick={handleEdit}
