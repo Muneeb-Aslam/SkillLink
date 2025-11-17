@@ -166,7 +166,7 @@ export default function AdminFreelancers() {
           <div className="mb-8">
             <div className="flex items-center justify-between">
               <div>
-                <h1 className="text-3xl font-bold text-gray-900">
+                <h1 className="text-3xl font-bold text-blue">
                   Freelancers Management
                 </h1>
                 <p className="mt-2 text-sm text-gray-600">
@@ -179,7 +179,7 @@ export default function AdminFreelancers() {
             </div>
           </div>
 
-          <Card>
+          <Card className="bg-light-orange shadow-lg rounded-lg border-[1.5px] border-[#f8f4f4f1]">
             <CardHeader>
               <CardTitle>All Freelancers ({freelancers.length})</CardTitle>
               <CardDescription>
@@ -188,9 +188,9 @@ export default function AdminFreelancers() {
             </CardHeader>
             <CardContent>
               <div className="rounded-md border border-input">
-                <Table>
+                <Table className="border-[1.5px] border-input">
                   <TableHeader>
-                    <TableRow>
+                    <TableRow className="border-[1.5px] border-input text-blue">
                       <TableHead>Name</TableHead>
                       <TableHead>Email</TableHead>
                       <TableHead>Phone</TableHead>
@@ -215,7 +215,10 @@ export default function AdminFreelancers() {
                       </TableRow>
                     ) : (
                       freelancers.map((freelancer) => (
-                        <TableRow key={freelancer._id}>
+                        <TableRow
+                          key={freelancer._id}
+                          className="border-[1.5px] border-input hover:bg-[#f7eede]"
+                        >
                           <TableCell className="font-medium">
                             {freelancer.name || "N/A"}
                           </TableCell>
@@ -235,20 +238,26 @@ export default function AdminFreelancers() {
                                   <Badge
                                     key={index}
                                     variant="secondary"
-                                    className="text-xs"
+                                    className="text-xs border border-input"
                                   >
                                     {skill}
                                   </Badge>
                                 ))}
                               {freelancer.skills?.length > 2 && (
-                                <Badge variant="outline" className="text-xs">
+                                <Badge
+                                  variant="outline"
+                                  className="text-xs border border-input"
+                                >
                                   +{freelancer.skills.length - 2}
                                 </Badge>
                               )}
                             </div>
                           </TableCell>
                           <TableCell>
-                            <Badge variant="outline">
+                            <Badge
+                              variant="outline"
+                              className=" border border-input"
+                            >
                               {freelancer.bids || 0}
                             </Badge>
                           </TableCell>

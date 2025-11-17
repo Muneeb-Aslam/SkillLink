@@ -52,10 +52,10 @@ export default function AdminDashboard() {
   }
 
   return (
-    <div className="max-w-[1500px] mx-auto py-6 sm:px-6 lg:px-8">
-      <div className="px-4 py-6 sm:px-0">
+    <div className="max-w-[1500px] mx-auto py-6 sm:px-6 lg:px-8 ">
+      <div className="px-4 py-6 sm:px-0 bg-primary-background">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Admin Dashboard</h1>
+          <h1 className="text-3xl font-bold text-blue">Admin Dashboard</h1>
           <p className="mt-2 text-sm text-gray-600">
             Manage your platform users and projects
           </p>
@@ -64,7 +64,7 @@ export default function AdminDashboard() {
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {/* Clients Card */}
           <Link href="/admin/clients">
-            <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+            <Card className="hover:shadow-lg transition-shadow cursor-pointer bg-contrast shadow-lg rounded-lg border-[1.5px] border-[#f8f4f4f1]">
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-sm font-medium">
                   Total Clients
@@ -72,7 +72,9 @@ export default function AdminDashboard() {
                 <Users className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">{stats.totalClients}</div>
+                <div className="text-2xl font-bold text-blue">
+                  {stats.totalClients}
+                </div>
                 <CardDescription className="text-xs text-muted-foreground">
                   Registered clients on the platform
                 </CardDescription>
@@ -82,7 +84,7 @@ export default function AdminDashboard() {
 
           {/* Freelancers Card */}
           <Link href="/admin/freelancers">
-            <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+            <Card className="hover:shadow-lg transition-shadow cursor-pointer bg-contrast shadow-lg rounded-lg border-[1.5px] border-[#f8f4f4f1]">
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-sm font-medium">
                   Total Freelancers
@@ -90,7 +92,7 @@ export default function AdminDashboard() {
                 <UserCheck className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">
+                <div className="text-2xl font-bold text-blue">
                   {stats.totalFreelancers}
                 </div>
                 <CardDescription className="text-xs text-muted-foreground">
@@ -102,7 +104,7 @@ export default function AdminDashboard() {
 
           {/* Projects Card */}
           <Link href="/admin/projects">
-            <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+            <Card className="hover:shadow-lg transition-shadow cursor-pointer bg-contrast shadow-lg rounded-lg border-[1.5px] border-[#f8f4f4f1]">
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-sm font-medium">
                   Total Projects
@@ -110,7 +112,9 @@ export default function AdminDashboard() {
                 <Briefcase className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">{stats.totalProjects}</div>
+                <div className="text-2xl font-bold text-blue">
+                  {stats.totalProjects}
+                </div>
                 <CardDescription className="text-xs text-muted-foreground">
                   Projects created on the platform
                 </CardDescription>
@@ -121,12 +125,12 @@ export default function AdminDashboard() {
 
         {/* Quick Actions */}
         <div className="mt-8">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">
+          <h2 className="text-xl font-semibold text-danger mb-4">
             Quick Actions
           </h2>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <Link href="/admin/clients">
-              <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow cursor-pointer">
+              <div className="bg-light-orange p-6 rounded-lg shadow border-[1.5px] border-[#f8f4f4f1] hover:shadow-md transition-shadow cursor-pointer">
                 <h3 className="text-lg font-medium text-gray-900">
                   Manage Clients
                 </h3>
@@ -136,7 +140,7 @@ export default function AdminDashboard() {
               </div>
             </Link>
             <Link href="/admin/freelancers">
-              <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow cursor-pointer">
+              <div className="bg-light-orange shadow-lg rounded-lg border-[1.5px] border-[#f8f4f4f1] p-6 hover:shadow-md transition-shadow cursor-pointer">
                 <h3 className="text-lg font-medium text-gray-900">
                   Manage Freelancers
                 </h3>
@@ -146,7 +150,7 @@ export default function AdminDashboard() {
               </div>
             </Link>
             <Link href="/admin/projects">
-              <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow cursor-pointer">
+              <div className="bg-light-orange shadow-lg rounded-lg border-[1.5px] border-[#f8f4f4f1] p-6 hover:shadow-md transition-shadow cursor-pointer">
                 <h3 className="text-lg font-medium text-gray-900">
                   Manage Projects
                 </h3>

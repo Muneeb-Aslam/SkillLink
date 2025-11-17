@@ -153,7 +153,7 @@ export default function AdminClients() {
           <div className="mb-8">
             <div className="flex items-center justify-between">
               <div>
-                <h1 className="text-3xl font-bold text-gray-900">
+                <h1 className="text-3xl font-bold text-blue">
                   Clients Management
                 </h1>
                 <p className="mt-2 text-sm text-gray-600">
@@ -166,7 +166,7 @@ export default function AdminClients() {
             </div>
           </div>
 
-          <Card>
+          <Card className="bg-[#FAF7F1]  shadow-lg rounded-lg border-[1.5px] border-[#f8f4f4f1]">
             <CardHeader>
               <CardTitle>All Clients ({clients.length})</CardTitle>
               <CardDescription>
@@ -175,9 +175,9 @@ export default function AdminClients() {
             </CardHeader>
             <CardContent>
               <div className="rounded-md border border-input">
-                <Table>
+                <Table className="border-[1.5px] border-input">
                   <TableHeader>
-                    <TableRow>
+                    <TableRow className="border-[1.5px] border-input text-blue">
                       <TableHead>Name</TableHead>
                       <TableHead>Email</TableHead>
                       <TableHead>Phone</TableHead>
@@ -199,7 +199,10 @@ export default function AdminClients() {
                       </TableRow>
                     ) : (
                       clients.map((client) => (
-                        <TableRow key={client._id}>
+                        <TableRow
+                          key={client._id}
+                          className="border-[1.5px] border-input hover:bg-[#f7eede]"
+                        >
                           <TableCell className="font-medium">
                             {client.name || "N/A"}
                           </TableCell>

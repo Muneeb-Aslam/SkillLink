@@ -189,7 +189,7 @@ export default function AdminProjects() {
           <div className="mb-8">
             <div className="flex items-center justify-between">
               <div>
-                <h1 className="text-3xl font-bold text-gray-900">
+                <h1 className="text-3xl font-bold text-blue">
                   Projects Management
                 </h1>
                 <p className="mt-2 text-sm text-gray-600">
@@ -202,7 +202,7 @@ export default function AdminProjects() {
             </div>
           </div>
 
-          <Card>
+          <Card className="bg-[#FAF7F1]  shadow-lg rounded-lg border-[1.5px] border-[#f8f4f4f1]">
             <CardHeader>
               <CardTitle>All Projects ({projects.length})</CardTitle>
               <CardDescription>
@@ -211,9 +211,9 @@ export default function AdminProjects() {
             </CardHeader>
             <CardContent>
               <div className="rounded-md border border-input">
-                <Table>
+                <Table className="border-[1.5px] border-input">
                   <TableHeader>
-                    <TableRow>
+                    <TableRow className="border-[1.5px] border-input text-blue">
                       <TableHead>Title</TableHead>
                       <TableHead>Description</TableHead>
                       <TableHead>Budget</TableHead>
@@ -239,7 +239,10 @@ export default function AdminProjects() {
                       projects.map((project) => {
                         const status = getProjectStatus(project);
                         return (
-                          <TableRow key={project._id}>
+                          <TableRow
+                            key={project._id}
+                            className="border-[1.5px] border-input hover:bg-[#f7eede]"
+                          >
                             <TableCell className="font-medium max-w-[200px]">
                               <div className="truncate" title={project.title}>
                                 {project.title}
@@ -264,7 +267,7 @@ export default function AdminProjects() {
                                     <Badge
                                       key={index}
                                       variant="secondary"
-                                      className="text-xs"
+                                      className="text-xs border border-input"
                                     >
                                       {typeof skill === "string"
                                         ? skill
@@ -272,7 +275,10 @@ export default function AdminProjects() {
                                     </Badge>
                                   ))}
                                 {project.skills?.length > 2 && (
-                                  <Badge variant="outline" className="text-xs">
+                                  <Badge
+                                    variant="outline"
+                                    className="text-xs border border-input"
+                                  >
                                     +{project.skills.length - 2}
                                   </Badge>
                                 )}
@@ -286,7 +292,7 @@ export default function AdminProjects() {
                                     <Badge
                                       key={index}
                                       variant="outline"
-                                      className="text-xs"
+                                      className="text-xs border border-input"
                                     >
                                       {typeof category === "string"
                                         ? category
@@ -294,14 +300,20 @@ export default function AdminProjects() {
                                     </Badge>
                                   ))}
                                 {project.categories?.length > 1 && (
-                                  <Badge variant="outline" className="text-xs">
+                                  <Badge
+                                    variant="outline"
+                                    className="text-xs border border-input"
+                                  >
                                     +{project.categories.length - 1}
                                   </Badge>
                                 )}
                               </div>
                             </TableCell>
                             <TableCell>
-                              <Badge variant={getStatusVariant(status)}>
+                              <Badge
+                                variant={getStatusVariant(status)}
+                                className="border border-input"
+                              >
                                 {status}
                               </Badge>
                             </TableCell>

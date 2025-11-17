@@ -13,7 +13,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
 
   return (
     <Link
-      className="grid py-4 px-6 grid-rows-[min-content_min-content_auto_min-content] gap-3 rounded border border-border-gray w-full"
+      className="grid py-4 px-6 grid-rows-[min-content_min-content_auto_min-content] gap-3  border-border-gray w-full bg-white  shadow-lg rounded-lg border-[1.5px] border-[#f8f4f4f1]"
       href={`/${user?.role}/${user?.id}/${project._id}/detail`}
     >
       <div className="flex justify-between w-full">

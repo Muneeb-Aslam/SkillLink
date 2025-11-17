@@ -10,9 +10,11 @@ const config: Config = {
     extend: {
       colors: {
         blue: "#04b2b2",
+        contrast: "#eef7f7",
         "dark-blue": "#25324B",
         "light-gray": "#7C8493",
         "lightest-gray": "#D6DDEB",
+        "light-orange": "#FAF7F1",
         danger: "#D93F21",
         heading: "#1E1E1E",
         normal: "#5E6368",
