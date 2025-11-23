@@ -31,28 +31,28 @@ export default function AdminLayout({
                   href="/admin"
                   className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 hover:text-gray-700"
                 >
-                  <Home className="mr-2 h-4 w-4" />
+                  <Home className="mr-2 h-4 w-4 text-blue " />
                   Dashboard
                 </Link>
                 <Link
                   href="/admin/clients"
                   className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700"
                 >
-                  <Users className="mr-2 h-4 w-4" />
+                  <Users className="mr-2 h-4 w-4 text-blue" />
                   Clients
                 </Link>
                 <Link
                   href="/admin/freelancers"
                   className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700"
                 >
-                  <UserCheck className="mr-2 h-4 w-4" />
+                  <UserCheck className="mr-2 h-4 w-4 text-blue" />
                   Freelancers
                 </Link>
                 <Link
                   href="/admin/projects"
                   className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700"
                 >
-                  <Briefcase className="mr-2 h-4 w-4" />
+                  <Briefcase className="mr-2 h-4 w-4 text-blue" />
                   Projects
                 </Link>
               </div>
