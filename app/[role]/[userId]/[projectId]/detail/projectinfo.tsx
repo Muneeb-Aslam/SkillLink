@@ -19,14 +19,14 @@ const ProjectInfo: React.FC<{ project: any }> = ({ project }) => {
     });
   };
 
-  const releasePayment = async (amount:any) => {
+  const releasePayment = async (amount: any) => {
     try {
       const response = await fetch(`${API_RELEASE_PATH}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({amount, id:project.freelancerId}),
+        body: JSON.stringify({ amount, id: project.freelancerId }),
       });
       const res = await response.json();
       if (response?.ok) {
@@ -50,7 +50,7 @@ const ProjectInfo: React.FC<{ project: any }> = ({ project }) => {
         </Link>
         <Link
           href="bids"
-          className="bg-[#E9EBFD] text-blue w-max px-4 py-2 rounded-none font-bold"
+          className="bg-[#E9EBFD] text-blue w-max px-4 py-2 rounded-none font-bold hover:bg-blue hover:text-white"
         >
           Bids
         </Link>
@@ -136,19 +136,19 @@ const ProjectInfo: React.FC<{ project: any }> = ({ project }) => {
                   </span>
                 </div>
                 <div className="w-full flex justify-start items-center gap-4">
-                  <span className="bg-[#E9EBFD] w-max h-max px-4 py-2 text-md font-bold text-blue">
+                  <span className="bg-contrast w-max h-max px-4 py-2 text-md font-bold rounded-[4px] text-blackish hover:bg-blue hover:text-white">
                     {field?.name}
                   </span>
-                  <span className="bg-[#E9EBFD] w-max h-max px-4 py-2 text-md font-bold text-blue">
+                  <span className="bg-contrast w-max h-max px-4 py-2 text-md font-bold rounded-[4px] text-blackish hover:bg-blue hover:text-white">
                     ${field?.price}
                   </span>
-                  <span className="bg-[#E9EBFD] w-max h-max px-4 py-2 text-md font-bold text-blue">
+                  <span className="bg-contrast w-max h-max px-4 py-2 text-md font-bold rounded-[4px] text-blackish hover:bg-blue hover:text-white">
                     {field?.deadline} days
                   </span>
                   {project.submittedFiles?.length > 0 && (
                     <span
                       className="bg-blue w-max h-max px-4 py-2 text-md font-bold text-white cursor-pointer"
-                      onClick={()=>releasePayment(field?.price)}
+                      onClick={() => releasePayment(field?.price)}
                     >
                       Release Payment
                     </span>

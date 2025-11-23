@@ -55,13 +55,10 @@ const SocialLinks: React.FC<{ data: any }> = (data) => {
   };
 
   return (
-    <section className="p-6 w-2/5 border-[1.5px] rounded-lg border-[#f8f4f4f1] flex flex-col justify-between gap-4">
+    <section className="p-6 w-2/5 border-[1.5px] bg-white shadow-lg  rounded-lg border-[#f8f4f4f1] flex flex-col justify-between gap-4">
       <div className=" p-4 w-full flex justify-between items-center">
         <h3 className="text-blackish font-bold text-xl">Social Links</h3>
-        <div
-          className="border-[1.5px] border-primary w-8 h-8 bg-white cursor-pointer"
-          onClick={handleEdit}
-        >
+        <div className=" w-8 h-8 bg-white cursor-pointer" onClick={handleEdit}>
           <Image
             src={editicon}
             alt="add"

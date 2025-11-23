@@ -11,7 +11,11 @@ interface props {
 }
 const ProjectList: React.FC<{ itm: props }> = ({ itm }) => {
   return (
-    <div className="w-full h-[210px] border-2 border-landing-border flex flex-col justify-start items-start gap-2 py-2 px-6">
+    <div
+      className="w-full h-[210px] border border-landing-border rounded-xl bg-white shadow-sm 
+flex flex-col justify-start items-start gap-2 py-2 px-6
+hover:scale-[1.02] transition-all duration-200 ease-in-out"
+    >
       <div className="w-full flex justify-between items-center">
         <Image
           src={itm.icon}

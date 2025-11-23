@@ -89,10 +89,7 @@ const AdditionalProfile: React.FC<{ data: any }> = ({ data }) => {
         <h3 className="text-blackish font-bold text-xl">
           Additional Information
         </h3>
-        <div
-          className="border-[1.5px] border-primary w-8 h-8 bg-white cursor-pointer"
-          onClick={handleEdit}
-        >
+        <div className=" w-8 h-8 bg-white cursor-pointer" onClick={handleEdit}>
           <Image
             src={editicon}
             alt="add"

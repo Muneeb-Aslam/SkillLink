@@ -42,7 +42,7 @@ export default function DashboardNavbar() {
   console.log(freelancer);
 
   return (
-    <nav className=" bg-primary-background flex h-20 justify-center items-center select-none w-full relative">
+    <nav className=" bg-white flex h-20 justify-center items-center select-none w-full relative">
       <div className="relative w-full h-full flex justify-between items-center px-16 ">
         <div className="flex justify-start items-center gap-32">
           <Link className="flex justify-between items-center gap-2" href={"/"}>
@@ -51,26 +51,26 @@ export default function DashboardNavbar() {
               alt={"logo"}
               className="w-[50px] h-[50px] rounded-[50%]"
             ></Image>
-            <span className="text-normal font-semibold">Skill Link</span>
+            <span className="text-blackish font-semibold">Skill Link</span>
           </Link>
           <div className="flex justify-between items-center gap-12">
             {user?.role == "freelancer" && (
               <Link
                 href="/freelancer/projects"
-                className="text-normal font-semibold text-md"
+                className="text-blackish font-semibold text-md"
               >
                 Browse Projects
               </Link>
             )}
             <Link
               href={`/${user?.role}/project`}
-              className="text-normal font-semibold text-md"
+              className="text-blackish font-semibold text-md"
             >
               Current Projects
             </Link>
             <Link
               href={`/messages/${user?.id}`}
-              className="text-normal font-semibold text-md"
+              className="text-blackish font-semibold text-md"
             >
               Messages
             </Link>
@@ -89,7 +89,7 @@ export default function DashboardNavbar() {
               ${freelancer?.amount ?? 0}
             </span>
           )}
-          <span className="text-black font-bold text-md">{user?.name}</span>
+          <span className="text-blackish font-bold text-md">{user?.name}</span>
           <span
             onClick={handleDropDownClick}
             className="cursor-pointer text-black font-bold text-md"

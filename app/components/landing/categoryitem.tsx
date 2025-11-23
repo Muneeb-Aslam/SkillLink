@@ -8,7 +8,10 @@ interface props {
 }
 const CategoryItem: React.FC<{ itm: props }> = ({ itm }) => {
   return (
-    <div className=" h-[150px] border-2 border-landing-border flex flex-col justify-start items-start gap-4 py-2 px-6">
+    <div
+      className="h-[150px] border border-landing-border rounded-xl bg-white shadow-sm flex flex-col justify-start items-start gap-4 py-2 px-6 
+hover:scale-[1.02] transition-all duration-200 ease-in-out"
+    >
       <Image
         src={itm.icon}
         alt="category"

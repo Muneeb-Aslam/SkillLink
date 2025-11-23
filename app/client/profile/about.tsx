@@ -53,7 +53,7 @@ const About: React.FC<any> = (data: { data: any }) => {
         <div className="w-full flex justify-between items-center">
           <h3 className="text-blackish font-bold text-xl">About Me</h3>
           <div
-            className="border-[1.5px] border-primary w-8 h-8 bg-white cursor-pointer"
+            className=" w-8 h-8 bg-white cursor-pointer"
             onClick={handleEdit}
           >
             <Image

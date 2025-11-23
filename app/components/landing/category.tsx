@@ -16,7 +16,7 @@ const Category: React.FC = () => {
             Explore by <span className="text-blue">category</span>
           </div>
         </div>
-        <div className="w-full grid grid-cols-4 gap-4 justify-center">
+        <div className="w-full grid grid-cols-4 gap-4 justify-center ">
           {!!categories &&
             categories.map((itm, index) => (
               <CategoryItem key={index} itm={itm} />

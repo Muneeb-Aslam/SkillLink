@@ -83,9 +83,12 @@ export default function Header(data: any) {
   return (
     <header className="w-full flex justify-center items-center ">
       <div className="py-8 px-16 w-full flex justify-between items-start gap-4 max-w-[1300px]">
-        <div className="h-max relative w-full border-[1.5px] border-primary">
+        <div
+          className="h-max relative w-full border-0  rounded-xl bg-white shadow-sm
+hover:shadow-md hover:scale-[1.01] transition-all duration-200 ease-in-out"
+        >
           <div>
-            <div className="w-full h-48 bg-no-repeat bg-[#76d4d4]"></div>
+            <div className="w-full h-48 bg-no-repeat rounded-2 border-red bg-[#76d4d4]"></div>
             <div
               className=" shadow-lg rounded-lg border-[1.5px] border-[#f8f4f4f1] w-8 h-8 bg-white absolute top-4 right-4 cursor-pointer"
               onClick={handleEdit}
