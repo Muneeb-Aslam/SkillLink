@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import SkillItem from "./skillitem";
 import CategoryItem from "./categoryitem";
 import Link from "next/link";
@@ -6,8 +8,62 @@ import moment from "moment";
 import { Button } from "@/components/ui/button";
 import { API_RELEASE_PATH } from "@/app/api/api_constants";
 import toast from "react-hot-toast";
+import { useSession } from "next-auth/react";
+import WorkProgress from "@/app/components/projects/WorkProgress";
+import DeadlineCountdown from "@/app/components/projects/DeadlineCountdown";
 
-const ProjectInfo: React.FC<{ project: any }> = ({ project }) => {
+const ProjectInfo: React.FC<{ project: any; role: string }> = ({ project, role }) => {
+  const session = useSession();
+  const user = session?.data?.user;
+  const [workProgress, setWorkProgress] = useState(project?.workProgress || 0);
+  const [workProgressHistory, setWorkProgressHistory] = useState(
+    project?.workProgressHistory || []
+  );
+  const [deadline, setDeadline] = useState<Date | null>(
+    project?.deadline ? new Date(project.deadline) : null
+  );
+  const [countdownStarted, setCountdownStarted] = useState(
+    project?.countdownStarted || false
+  );
+
+  useEffect(() => {
+    // Fetch work progress data
+    const fetchWorkProgress = async () => {
+      try {
+        const response = await fetch(
+          `/api/projects/work-progress?projectId=${project._id}`
+        );
+        if (response.ok) {
+          const data = await response.json();
+          setWorkProgress(data.workProgress);
+          setWorkProgressHistory(data.workProgressHistory);
+        }
+      } catch (error) {
+        console.error("Error fetching work progress:", error);
+      }
+    };
+
+    // Fetch deadline data
+    const fetchDeadline = async () => {
+      try {
+        const response = await fetch(
+          `/api/projects/deadline?projectId=${project._id}`
+        );
+        if (response.ok) {
+          const data = await response.json();
+          setDeadline(data.deadline ? new Date(data.deadline) : null);
+          setCountdownStarted(data.countdownStarted);
+        }
+      } catch (error) {
+        console.error("Error fetching deadline:", error);
+      }
+    };
+
+    if (project?._id) {
+      fetchWorkProgress();
+      fetchDeadline();
+    }
+  }, [project?._id]);
   const downloadFiles = () => {
     project?.submittedFiles.forEach((url) => {
       const link = document.createElement("a");
@@ -157,6 +213,29 @@ const ProjectInfo: React.FC<{ project: any }> = ({ project }) => {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Work Progress Section */}
+        <hr className="w-full h-2 text-normal opacity-40" />
+        <div className="w-full flex flex-col justify-start items-start gap-4 py-6">
+          <WorkProgress
+            projectId={project._id}
+            initialProgress={workProgress}
+            initialHistory={workProgressHistory}
+            userRole={(role as "client" | "freelancer" | "admin") || "client"}
+            userId={user?.id || ""}
+          />
+        </div>
+
+        {/* Deadline Countdown Section */}
+        <hr className="w-full h-2 text-normal opacity-40" />
+        <div className="w-full flex flex-col justify-start items-start gap-4 py-6">
+          <DeadlineCountdown
+            projectId={project._id}
+            initialDeadline={deadline}
+            initialCountdownStarted={countdownStarted}
+            userRole={(role as "client" | "freelancer" | "admin") || "client"}
+          />
         </div>
       </section>
     </main>

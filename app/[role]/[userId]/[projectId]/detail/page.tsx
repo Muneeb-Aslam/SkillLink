@@ -35,7 +35,7 @@ export default function PostProject() {
                <ProjectDetailsHeader role={role} bid project={project} />
                <section className="w-full bg-white flex justify-center items-center">
                   <div className="w-full  h-max flex flex-col justify-start items-start gap-6 px-16 py-12">
-                     <ProjectInfo project={project} />
+                     <ProjectInfo project={project} role={role as string} />
                   </div>
                </section>
                <Footer />

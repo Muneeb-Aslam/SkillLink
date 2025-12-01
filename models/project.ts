@@ -16,6 +16,14 @@ interface IFile {
   url: string;
 }
 
+interface IWorkProgressHistory {
+  percentage: number;
+  updatedBy: string;
+  updatedByRole: "client" | "freelancer" | "admin";
+  comment?: string;
+  updatedAt: Date;
+}
+
 export interface IProject extends Document {
   clientId: string;
   freelancerId: string | null;
@@ -27,6 +35,11 @@ export interface IProject extends Document {
   milestones: IMilestones | null;
   files: any | null;
   submittedFiles: any | null;
+  workProgress: number;
+  workProgressHistory: IWorkProgressHistory[];
+  deadline: Date | null;
+  countdownStarted: boolean;
+  countdownStartedAt: Date | null;
 }
 
 const projectSchema: Schema<IProject> = new Schema(
@@ -51,6 +64,23 @@ const projectSchema: Schema<IProject> = new Schema(
     ],
     files: { type: Array, default: [], required: false },
     submittedFiles: { type: Array, default: [], required: false },
+    workProgress: { type: Number, default: 0, min: 0, max: 100 },
+    workProgressHistory: [
+      {
+        percentage: { type: Number, required: true },
+        updatedBy: { type: String, required: true },
+        updatedByRole: {
+          type: String,
+          enum: ["client", "freelancer", "admin"],
+          required: true,
+        },
+        comment: { type: String, required: false },
+        updatedAt: { type: Date, default: Date.now },
+      },
+    ],
+    deadline: { type: Date, required: false, default: null },
+    countdownStarted: { type: Boolean, default: false },
+    countdownStartedAt: { type: Date, required: false, default: null },
   },
   {
     timestamps: true,

@@ -28,3 +28,5 @@ export const API_CONVERSATION_SEND = `${API_BASE_PATH}/conversation/send`;
 
 //general projects route
 export const API_PROJECTS_PATH = `${API_BASE_PATH}/projects`;
+export const API_PROJECTS_WORK_PROGRESS_PATH = `${API_BASE_PATH}/projects/work-progress`;
+export const API_PROJECTS_DEADLINE_PATH = `${API_BASE_PATH}/projects/deadline`;
